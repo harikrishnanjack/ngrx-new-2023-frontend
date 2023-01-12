@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center align-items-center">
+  <p-card class="forms">
+     <h6 class="d-flex justify-content-center">Login</h6>
+      <form class="d-flex flex-column gap-3" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+        <div class="form-group d-flex flex-column">
+            <label for="Email">Email</label>
+            <input class="input" id="float-input" type="text" placeholder="Enter email" pInputText formControlName="email">
+        </div>
+        <div class="form-group d-flex flex-column">
+            <label for="Email">Password</label>
+            <p-password id="float-input" [toggleMask]="true" placeholder="Enter password" formControlName="password"></p-password>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <button pButton pRipple type="submit" label="Login" class="p-button-raised p-button-help"></button>
+        </div>
+        <a class="link d-flex justify-content-center" [routerLink]="['/register']">Register</a>
+      </form>
+    </p-card>
+</div>

@@ -1,0 +1,7 @@
+<form class="forms d-flex flex-column gap-2" [formGroup]="postForm" (ngSubmit)="onPostSubmit()">
+  <p-fileUpload name="myFile" accept="image/*" [maxFileSize]="1000000" (onSelect)="onFileSelect($event)"></p-fileUpload>
+  <textarea pInputTextarea formControlName="description"></textarea>
+  <div>
+    <button pButton pRipple type="submit" label="Add Post" class="p-button-outlined p-button-rounded p-button-info"></button>
+  </div>
+</form>

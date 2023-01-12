@@ -1,0 +1,11 @@
+<div class="p-2">
+  <button pButton pRipple (click)="naviagteToPostForm()" type="submit" label="Back" class="p-button-outlined p-button-rounded p-button-info"></button>
+</div>
+<ng-container *ngIf="userData?.length;else noData">
+  <div class="d-grid gap-3 p-2" *ngFor="let data of userData">
+    <div class="p-2 bg-light border">{{data.description}}</div>
+  </div>
+</ng-container>
+<ng-template #noData>
+ No Data Available
+</ng-template>

@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center align-items-center">
+  <p-card class="forms">
+     <h6 class="d-flex justify-content-center">Register</h6>
+      <form class="d-flex flex-column gap-3" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="d-flex gap-3">
+          <div class="form-group d-flex flex-column">
+            <label for="fname">First Name</label>
+            <input class="" id="float-input-fname" type="text" placeholder="Enter First name" formControlName="firstName" pInputText>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <label for="lname">Last Name</label>
+            <input class="" id="float-input-lname" type="text" placeholder="Enter Last name" formControlName="lastName" pInputText>
+        </div>
+        </div>
+        <div class="d-flex gap-3">
+          <div class="form-group d-flex flex-column">
+            <label for="location">Location</label>
+            <input class="" id="float-input-location" type="text" placeholder="Enter Location" formControlName="location" pInputText>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <label for="occupation">Occupation</label>
+            <input class="" id="float-input-desig" type="text" placeholder="Enter Occupation" formControlName="occupation" pInputText>
+        </div>
+        </div>
+        <div class="form-group d-flex flex-column">
+          <label for="profile">Profile pic</label>
+          <input type="file" class="file" #files formControlName="picturePath" (change)="previewFile($event)"  accept="image/*">
+          <button (click)="files.click()"  pButton pRipple type="button" icon="pi pi-cloud-upload" class="p-button-rounded p-button-help"></button>
+          <img [src]="imageUrl" *ngIf="imageUrl" style="width: 100px;" height="100px"/>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <label for="Email">Email</label>
+            <input class="input" id="float-input-email" type="text" placeholder="Enter email" formControlName="email" pInputText>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <label for="password">Password</label>
+            <p-password [inputStyle]="{'width':'100%'}" [style]="{'width':'100%'}" formControlName="password" class="input-password" id="float-input" [toggleMask]="true" placeholder="Enter password"></p-password>
+        </div>
+        <div class="form-group d-flex flex-column">
+            <button pButton pRipple type="submit" label="Register" class="p-button-raised p-button-help"></button>
+        </div>
+        <a class="link d-flex justify-content-center" [routerLink]="['/login']">Login</a>
+      </form>
+    </p-card>
+</div>

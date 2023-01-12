@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-end p-2">
+  <button pButton pRipple (click)="navigateToList()" type="button" label="List" class="p-button-outlined p-button-rounded p-button-info"></button>
+  <button pButton pRipple (click)="onLogout()" type="button" label="Logout" class="p-button-outlined p-button-rounded p-button-warning pr-2"></button>
+</div>
+
+<div class="d-flex flex-column p-5">
+  <div>
+    <app-post-form></app-post-form>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
